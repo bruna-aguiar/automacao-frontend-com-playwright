@@ -1,10 +1,14 @@
 class LoginPage {
+    
+    
+
     constructor(page) {
         this.page = page;
         this.userField = '#user-name';
         this.passField = '#password';
         this.loginButton = '#login-button';
         this.errorMessage = '.error-message-container';
+        
     }
 
     async navigate() {
@@ -20,6 +24,8 @@ class LoginPage {
     async getErrorMessage() {
         return this.page.textContent(this.errorMessage);
     }
+
+    
 }
 
 module.exports = LoginPage;

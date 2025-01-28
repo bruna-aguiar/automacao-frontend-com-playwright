@@ -11,4 +11,11 @@ test('Login com usuário válido', async ({ page }) => {
 
     // Espera o redirecionamento para a página de produtos
     expect(await productsPage.getTitle()).toBe('Products');
+
+    // Jornada de compra do cliente: adicionando e removendo um item do carrinho
+    await productsPage.adicionarItemNoCarrinho();
+    await productsPage.cliclarNoCarrinho();
+    await productsPage.removerItemDoCarrinho();
+    await productsPage.ClicarEmContinuarComprando();
+    
 });
